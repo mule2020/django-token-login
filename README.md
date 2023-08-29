@@ -1,4 +1,4 @@
-# django-token-login
+
 # Django JWT Authentication and User Profile Example
 
 This repository provides an example implementation of user registration, login, and user profile functionality using Django framework and JSON Web Tokens (JWT) for authentication. It's designed to help you understand and kickstart your development process when building user authentication and profile features in your Django applications.
