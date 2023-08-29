@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+from decouple import config
+
+
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -54,7 +58,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Add the URL of your React frontend
+    config('REACT_APP_URL'),
+    # "http://localhost:3000",  # Add the URL of your React frontend
     # Add more allowed origins if needed
 ]
 
@@ -85,9 +90,9 @@ WSGI_APPLICATION = 'newa2p.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bestsms',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
         'HOST': 'localhost',
         'PORT': '5432',
     }
